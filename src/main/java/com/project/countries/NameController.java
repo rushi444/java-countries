@@ -12,21 +12,22 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/names")
 public class NameController {
-    // returns countries alphabetically
+    // localhost:2019/names/all
     @GetMapping(value = "/all", produces = {"application/json"})
     public ResponseEntity<?> getAllCountries() {
-       CountriesApplication.myCountryList.countryList.sort((e1, e2) ->
-               e1.getName().compareToIgnoreCase(e2.getName()));
-       return new ResponseEntity<>(CountriesApplication.myCountryList.countryList, HttpStatus.OK);
+        CountriesApplication.myCountryList.countryList.sort((e1, e2) ->
+                e1.getName().compareToIgnoreCase(e2.getName()));
+        return new ResponseEntity<>(CountriesApplication.myCountryList.countryList, HttpStatus.OK);
     }
-
-    @GetMapping(value = "/start/{letter}", produces  = {"application/json"})
-    public ResponseEntity<?> getCountriesStartingWith(@PathVariable char letter){
-       ArrayList<Country> rtnCountries = CountriesApplication.myCountryList.findCountries(c -> c.getName().toUpperCase().charAt(0) == Character.toUpperCase(letter));
-       rtnCountries.sort((c1, c2) -> c1.getName().compareToIgnoreCase(c2.getName()));
-       return new ResponseEntity<>(rtnCountries, HttpStatus.OK);
+    // localhost:2019/names/start/{letter}
+    @GetMapping(value = "/start/{letter}", produces = {"application/json"})
+    public ResponseEntity<?> getCountriesStartingWith(@PathVariable char letter) {
+        ArrayList<Country> rtnCountries = CountriesApplication.myCountryList.findCountries(c -> c.getName().toUpperCase().charAt(0) == Character.toUpperCase(letter));
+        rtnCountries.sort((c1, c2) -> c1.getName().compareToIgnoreCase(c2.getName()));
+        return new ResponseEntity<>(rtnCountries, HttpStatus.OK);
 
     }
+    // localhost:2019/size/{num}
     @GetMapping(value = "/size/{num}", produces = {"application/json"})
     public ResponseEntity<?> getCountriesWithEqualOrLongerLength(@PathVariable int num) {
         ArrayList<Country> rtnCountries = CountriesApplication.myCountryList.findCountries(c -> c.getName().length() >= num);
