@@ -30,7 +30,7 @@ public class NameController {
     @GetMapping(value = "/size/{num}", produces = {"application/json"})
     public ResponseEntity<?> getCountriesWithEqualOrLongerLength(@PathVariable int num) {
         ArrayList<Country> rtnCountries = CountriesApplication.myCountryList.findCountries(c -> c.getName().length() >= num);
-        return new ResponseEntity<>(rtnCountries, HttpStatus.OK); 
+        return new ResponseEntity<>(rtnCountries, HttpStatus.OK);
     }
 
 
