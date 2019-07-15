@@ -208,4 +208,14 @@ public class CountryList {
         countryList.add(new Country("Seychelles",95702,460,36));
 
     }
+
+    public ArrayList<Country> findCountries(CheckCountry tester) {
+        ArrayList<Country> tempCountry = new ArrayList<>();
+        for (Country c: countryList) {
+            if (tester.test(c)) {
+                tempCountry.add(c);
+            }
+        }
+        return tempCountry;
+    }
 }
