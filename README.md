@@ -1,3 +1,11 @@
+- [ ] Initial Commit
+- [ ] Create Country Class
+- [ ] Create ArrayList of Countries
+- [ ] Create Lambda Tester
+- [ ] Create Names URL
+- [ ] Create Population URL
+- [ ] Re-Factor Code
+
 # Project Country Search
 
 A student that completes this project shows that they can:
