@@ -1,10 +1,10 @@
 - [x] Initial Commit
 - [x] Create Country Class
 - [x] Create ArrayList of Countries
-- [ ] Create Lambda Tester
-- [ ] Create Names Controller
-- [ ] Create Population Controller
-- [ ] Re-Factor Code
+- [x] Create Lambda Tester
+- [x] Create Names Controller
+- [x] Create Population Controller
+- [x] Re-Factor Code
 
 # Project Country Search
 
