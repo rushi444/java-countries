@@ -8,7 +8,7 @@ public class Country {
     private int landMassSize;
     private int medianAge;
 
-    public Country(int id, String name, int population, int landMassSize, int medianAge) {
+    public Country(String name, int population, int landMassSize, int medianAge) {
         maxID++;
         this.id = maxID;
         this.name = name;
@@ -18,7 +18,7 @@ public class Country {
     }
 
     public Country(Country toClone) {
-        this.id = toClone.getId();
+        this.id = getId();
         this.name = toClone.getName();
         this.population = toClone.getPopulation();
         this.landMassSize = toClone.getLandMassSize();
@@ -68,8 +68,7 @@ public class Country {
     @Override
     public String toString() {
         return "Country{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", population=" + population +
                 ", landMassSize=" + landMassSize +
                 ", medianAge=" + medianAge +
